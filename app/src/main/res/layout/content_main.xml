@@ -21,41 +21,65 @@
     <Button
         android:id="@+id/button_school_lunch"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:text="급식"
-        android:textSize="60sp"/>
+        android:onClick="onClick"
+        android:textSize="50sp"
+        android:background="@drawable/button_selector1"
+        android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/button_notice"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:text="공지사항"
-        android:textSize="60sp"
-        android:layout_below="@id/button_school_lunch"/>
+        android:textSize="50sp"
+        android:background="@drawable/button_selector1"
+        android:layout_below="@id/button_school_lunch"
+        android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/button_school_paper"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:text="가정통신문"
-        android:textSize="60sp"
-        android:layout_below="@id/button_notice"/>
+        android:textSize="50sp"
+        android:layout_below="@id/button_notice"
+        android:background="@drawable/button_selector1"
+        android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/button_school_calender"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:text="학교 일정"
-        android:textSize="60sp"
-        android:layout_below="@id/button_school_paper"/>
+        android:textSize="50sp"
+        android:layout_below="@id/button_school_paper"
+        android:background="@drawable/button_selector1"
+        android:layout_margin="5dp"/>
 
     <Button
         android:id="@+id/button_school_notice"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:text="학교 소식"
-        android:textSize="60sp"
-        android:layout_below="@id/button_school_calender"/>
+        android:textSize="50sp"
+        android:background="@drawable/button_selector1"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/button_school_calender"/>
+
+    <Button
+        android:id="@+id/button_contest"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="대회 안내"
+        android:textSize="50sp"
+        android:background="@drawable/button_selector1"
+        android:layout_margin="5dp"
+        android:layout_below="@id/button_school_notice"/>
+
+
+
 </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

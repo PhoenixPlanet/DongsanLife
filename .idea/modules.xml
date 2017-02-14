@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/3rdparty_login_library_android_4.1.4a/3rdparty_login_library_android_4.1.4a.iml" filepath="$PROJECT_DIR$/3rdparty_login_library_android_4.1.4a/3rdparty_login_library_android_4.1.4a.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjectS-team.iml" filepath="$PROJECT_DIR$/ProjectS-team.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

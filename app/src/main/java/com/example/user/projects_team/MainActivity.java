@@ -1,5 +1,6 @@
 package com.example.user.projects_team;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,13 +16,16 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     //floating action button 선언
     FloatingActionButton fab_main, fab_chat, fab_write;
 
-    //floating action butoon animation 선언
+    //floating action button animation 선언
     Animation fabOpen, fabClose, fabClockwise, fabAntiClockwise;
     Button btn, btn2;
 
@@ -32,24 +36,50 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //버튼 객체
+        btn = (Button) findViewById(R.id.button_school_lunch);
+        btn2 = (Button) findViewById(R.id.button_notice);
 
         //Floating Action Button 객체
         fab_main = (FloatingActionButton) findViewById(R.id.fab_main);
         fab_chat = (FloatingActionButton) findViewById(R.id.fab_chat);
         fab_write = (FloatingActionButton) findViewById(R.id.fab_write);
 
-        btn = (Button) findViewById(R.id.button_school_lunch);
-        btn2 = (Button) findViewById(R.id.button_notice);
         //Floating Action Button Animation 객체
         fabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         fabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
         fabClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
         fabAntiClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_anticlockwise);
 
-        btn.setText(fab_main.getAlpha()+"투명도");
-        btn2.setText(fab_main.getVisibility()+"보여짐");
+
+        View.OnClickListener foodlistener = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, FoodActivity.class);
+                startActivity(intent);
+            }
+        };
+
+        View.OnClickListener noticelistener = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, SchoolNoticeActivity.class);
+                startActivity(intent);
+            }
+        };
+
+        btn.setOnClickListener(foodlistener);
+        btn2.setOnClickListener(noticelistener);
 
         fab_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,25 +89,19 @@ public class MainActivity extends AppCompatActivity
                 {
                     fab_write.startAnimation(fabClose);
                     fab_chat.startAnimation(fabClose);
-                    fab_main.startAnimation(fabAntiClockwise);
+                    //fab_main.startAnimation(fabClockwise);
                     fab_chat.setClickable(false);
                     fab_write.setClickable(false);
                     isOpen = false;
-                    fab_main.setVisibility(View.VISIBLE);
-                    btn.setText(fab_main.getAlpha()+"투명도");
-                    btn2.setText(fab_main.getVisibility()+"보여짐");
                 }
                 else
                 {
                     fab_write.startAnimation(fabOpen);
                     fab_chat.startAnimation(fabOpen);
-                    fab_main.startAnimation(fabClockwise);
+                    //fab_main.startAnimation(fabAntiClockwise);
                     fab_chat.setClickable(true);
                     fab_write.setClickable(true);
                     isOpen = true;
-                    fab_main.setVisibility(View.VISIBLE);
-                    btn.setText(fab_main.getAlpha()+"투명도");
-                    btn2.setText(fab_main.getVisibility()+"보여짐");
                 }
 
             }
@@ -133,21 +157,30 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_about) {
+            Intent intent = new Intent(this, aboutDslife.class);
+            startActivity(intent);
+        }
 
-        } else if (id == R.id.nav_how) {
+        else if (id == R.id.setting) {
 
-        } else if (id == R.id.nav_slideshow) {
+        }
 
-        } else if (id == R.id.nav_manage) {
+        else if (id == R.id.signin) {
+            Intent intent = new Intent(this, fcmLogin.class);
+            startActivity(intent);
+        }
 
-        } else if (id == R.id.nav_share) {
+        else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        }
+
+        else if (id == R.id.nav_send) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        drawer.clearFocus();
         return true;
     }
 }

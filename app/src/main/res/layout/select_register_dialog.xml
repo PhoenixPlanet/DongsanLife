@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5e64bc"
+        android:layout_margin="10dp"
+        android:id="@+id/register_select_google"
+        android:text="Google 계정으로 연결"
+        android:onClick="selectGoogle"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e29f47"
+        android:layout_margin="10dp"
+        android:id="@+id/register_select_email"
+        android:text="이메일을 이용하여 가입"
+        android:onClick="selectEmail"/>
+</LinearLayout>

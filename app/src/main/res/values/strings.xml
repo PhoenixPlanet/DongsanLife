@@ -5,4 +5,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fcm_login">fcmLogin</string>
+    <string name="aboutDslifeString">동산라이프는 안산 동산고등학교 전용 학교 생활 도우미 앱입니다. 급식, 대회, 학교 공지사항 등 다양한 정보를 얻을 수 있으며 커뮤니티에서 정보를 공유하며 활동할 수도 있습니다. 동산라이프와 함께 행복한 학교생활 하시길 바랍니다.</string>
+    <string name="email_error">이메일 형식에 맞지 않습니다</string>
+    <string name="register_fail">회원가입에 실패하였습니다. 이미 가입하셨거나 이메일 주소가 잘못된 것 같습니다.</string>
+    <string name="please_wait">잠시만 기다려주세요</string>
+    <string name="register_success">회원가입이 완료되었습니다. 설정 > 프로필에서 썸네일을 수정하실 수 있습니다.</string>
+    <string name="state_signed_out">비로그인 상태입니다</string>
+    <string name="fail_sign_in">이메일 주소나 비밀번호가 잘못되었습니다</string>
+    <string name="check_email_or_password">이메일 주소나 비밀번호를 다시 한번 확인해주세요</string>
+    <!-- <string name="default_web_client_id">117753655569-thaiq6pl33bk1vc5r9gjsqta0t7cc6kq.apps.googleusercontent.com</string> -->
 </resources>

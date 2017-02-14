@@ -2,14 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.projects_team">
 
+    <!-- 인터넷 접근 권한 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/dslife3"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        // Splash Activity
+        <!-- 네이버 로그인 액티비티 -->
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
+            android:label="OAuth2.0 In-app" />
+
+        <!-- 스플래시액티비티 -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -20,11 +32,67 @@
             </intent-filter>
         </activity>
 
-        // Main Activity
+        <!-- 메인액티비티 -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- 로그인액티비티 -->
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- 급식액티비티 -->
+        <activity
+            android:name=".FoodActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- 학교공지액티비티 -->
+        <activity android:name=".SchoolNoticeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".NoticeShowActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SchoolNoticeActivity" />
+        </activity>
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- fcm 로그인 액티비티 -->
+        <activity android:name=".fcmLogin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SchoolNoticeActivity" />
+        </activity>
+
+        <!-- 앱 소개 액티비티 -->
+        <activity android:name=".aboutDslife">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SchoolNoticeActivity" />
+        </activity>
+
+        <activity android:name=".RegisterEmailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".fcmLogin" />
         </activity>
     </application>
 

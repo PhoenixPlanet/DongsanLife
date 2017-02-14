@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "117753655569",
+    "firebase_url": "https://fir-dslife.firebaseio.com",
+    "project_id": "firebase-dslife",
+    "storage_bucket": "firebase-dslife.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117753655569:android:ae8ffe7d351d4ab6",
+        "android_client_info": {
+          "package_name": "com.example.user.projects_team"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117753655569-thaiq6pl33bk1vc5r9gjsqta0t7cc6kq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "117753655569-kf3upf832euiont4gfr9n0irnl5h703u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBomkC7SAV0NHobGp1lgYuWEThNSmxroks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

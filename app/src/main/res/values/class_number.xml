@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="class_number">
+        <item>1반</item>
+        <item>2반</item>
+        <item>3반</item>
+        <item>4반</item>
+        <item>5반</item>
+        <item>6반</item>
+        <item>7반</item>
+        <item>8반</item>
+        <item>9반</item>
+        <item>10반</item>
+        <item>11반</item>
+        <item>12반</item>
+    </string-array>
+</resources>

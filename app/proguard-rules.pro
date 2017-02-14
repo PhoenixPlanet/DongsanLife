@@ -15,3 +15,11 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-libraryjars ../ProjectS_team/naveroauthlib/naveroauthlib-4.1.3.jar
+-keep public class com.nhn.android.naverlogin.** {
+       public protected *;
+}
+
+-keep public class org.jsoup.** {
+	public *;
+}
